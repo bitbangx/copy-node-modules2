@@ -1,6 +1,6 @@
 {
   "name": "copy-node-modules2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Fast Node.js modules deployment to destination directory",
   "main": "lib/index.js",
   "jsnext:main": "lib/index.es.js",

@@ -82,6 +82,7 @@ function findPkgDeps(pkg, callback) {
 
 function copyModules(pkgContent, callback) {
   const { name } = pkgContent;
+  console.log(`+ ${name}`);
   const srcDir = path.resolve(gOpts.srcDir, `node_modules/${name}`);
   const dstDir = path.resolve(gOpts.dstDir, `node_modules/${name}`);
   const { filter } = gOpts;
@@ -141,6 +142,8 @@ function copyNodeModules(srcDir, dstDir, opts, callback) {
       }
     });
   }
+
+  console.log('Copying Node modules');
 
   async.map(rootPkgList, findPkgDeps, (err, results) => {
     if (err) {
