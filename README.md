@@ -7,7 +7,7 @@ Copy all modules listed in `dependencies` or/and `devDependencies` field of `pac
 
 The procedure:
 
-1. Read `package.json` from source directory and read `dependencies` or `devDependencies` field.
+1. Read `package.json` from destination directory and read `dependencies` or `devDependencies` field.
 2. Search for existing modules and ther dependencies in source directory.
 3. Copy all modules to destination directory.
 
@@ -49,8 +49,8 @@ var copyNodeModules = require('copy-node-modules');
 
 ### copyNodeModules(srcDir, dstDir, [options], callback)
 
-* `srcDir`: source directory containing `package.json` file.
-* `dstDir`: destination directory to copy modules to (modules will be copied to `dstDir/node_modules` directory).
+* `srcDir`: source directory.
+* `dstDir`: destination directory containing `package.json` file to copy modules to (modules will be copied to `dstDir/node_modules` directory).
 * `options`:
 
   - `devDependencies`: boolean value, defaults to **false**, showing whether modules in `devDependencies` field of `package.json` should also be copied (when it's set to **true**).
@@ -108,8 +108,8 @@ copyNodeModules(srcDir, dstDir, { devDependencies: false, filter }, (err, result
 copy-node-modules src_dir dest_dir [-d|--dev] [-c|--concurrency] [-v|--verbose] [-f|--filter]
 ```
 
-* `src_dir`: source directory containing `package.json` file.
-* `dest_dir`: destination directory to copy modules to (modules will be copied to `dest_dir/node_modules` directory).
+* `src_dir`: source directory.
+* `dest_dir`: destination directory containing `package.json` file to copy modules to (modules will be copied to `dest_dir/node_modules` directory).
 * `-d|--dev`: whether modules in `devDependencies` field of `package.json` should be also copied.
 * `-c|--concurrency`: max number of root packages whose files are being copied concurrently.
 * `-v|--verbose`: verbose mode.

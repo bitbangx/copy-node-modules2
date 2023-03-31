@@ -117,7 +117,7 @@ function copyNodeModules(srcDir, dstDir, opts, callback) {
     gOpts.dstDir = dstDir;
   }
 
-  const pkgPath = path.resolve(srcDir, './package.json');
+  const pkgPath = path.resolve(dstDir, './package.json');
   const pkgContent = jsonfile.readFileSync(pkgPath, { throws: false });
   if (!pkgContent) {
     throw new Error('Parsing package.json in source directory fail.');
